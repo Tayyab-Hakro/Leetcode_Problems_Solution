@@ -1,6 +1,7 @@
-function isAnagram (word1 , word2){
-word1 = word1.split("").sort()
-word2 = word2.split("").sort()
-return  word1.includes(word2) ? true : false
-}
-console.log(isAnagram("anagram", "nagaram" ))
+function moveZeros(arr) {
+    let nonZero = arr.filter(n => n !== 0);
+    let zeroCount = arr.length - nonZero.length;
+    return [...nonZero, ...Array(zeroCount).fill(0)];
+  }
+  
+console.log(moveZeros([1,2,0,3,4]))  
