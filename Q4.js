@@ -1,19 +1,21 @@
-/**
- * @param {string} s
- * @param {string} t
- * @return {number}
- */
 var minSteps = function(s, t) {
-   let  freq = {}
-    let count  = 0
-   for(let char of s){
-        freq[char] =  (freq[char] || 0) +1
+    let countS = new Array(26).fill(0);
+    let countT = new Array(26).fill(0);
+
+    for (let i = 0; i < s.length; i++) {
+        countS[s.charCodeAt(i) - 97]++;
     }
-    for(let [keys, value] of Object.entries(freq) ){
-        if(value > t){
-            count++
-        }
+
+    for (let i = 0; i < t.length; i++) {
+        countT[t.charCodeAt(i) - 97]++;
     }
-   return count
+
+    let steps = 0;
+    for (let i = 0; i < 26; i++) {
+        steps += Math.abs(countS[i] - countT[i]);
+    }
+
+    return steps / 2; // since each mismatch affects both strings
 };
-console.log(minSteps("bab",  "aba"))
+
+console.log(minSteps("bab", "aba")); // Output: 0
