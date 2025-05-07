@@ -16,7 +16,7 @@ var halvesAreAlike = function(s) {
         }
 
     }
-return fi
+return first
 };
 console.log(halvesAreAlike("book"))
 console.log(halvesAreAlike("textbook"))
