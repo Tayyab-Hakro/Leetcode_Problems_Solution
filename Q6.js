@@ -1,7 +1,17 @@
-function moveZeros(arr) {
-    let nonZero = arr.filter(n => n !== 0);
-    let zeroCount = arr.length - nonZero.length;
-    return [...nonZero, ...Array(zeroCount).fill(0)];
+var findMatrix = function(nums) {
+  const freq = new Map();
+  const res = [];
+
+  for (let num of nums) {
+    const count = freq.get(num) || 0;
+    if (res.length <= count) {
+      res.push([]);
+    }
+    res[count].push(num);
+    freq.set(num, count + 1);
   }
-  
-console.log(moveZeros([1,2,0,3,4]))  
+
+  return res;
+};
+
+console.log(findMatrix([1, 3, 4, 1, 2, 3, 1]));
