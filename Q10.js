@@ -2,18 +2,11 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var minSubsequence = function(nums) {
-let totalSum = nums.reduce((val , ind) => val +=ind ,0)
-nums = nums.sort((a,b) => b-a)
-let selected = []
-let sum = 0
-for(let num of nums){
-    sum+=num
-    selected.push(num)
-    if(sum >totalSum-sum){
-        break
-    }
-}
-return selected
-};
-console.log(minSubsequence([4,3,10,9,8]))
+var numberGame = function(nums) {
+    nums = nums.sort((a , b) => a-b)
+    for(let i = 0 ; i<nums.length ;i+=2){
+        [nums[i] , nums[i+1]] = [nums[i+1], nums[i]]
+        }
+    return nums
+    };
+    console.log(numberGame([5,4,2,3]))
