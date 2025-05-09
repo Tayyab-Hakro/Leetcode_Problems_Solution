@@ -1,24 +1,22 @@
-function buildArray(target, n) {
-    const result = [];  // This will hold the final list of operations
-    let current = 1;     // Start reading numbers from 1
-  
-    for (let i = 0; i < target.length; i++) {
-      const num = target[i];
-  
-      // While current number is less than the target number
-      while (current < num) {
-        result.push("Push"); // Push the number (we must simulate reading it)
-        result.push("Pop");  // But it's not in target, so remove it
-        current++;           // Move to next number
-      }
-  
-      // Now current == num, so we need it in the stack
-      result.push("Push");  // Keep this one
-      current++;            // Move to next number
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+var calPoints = function(operations) {
+let stack = []
+for(let char of operations){
+    if(!isNaN(char) ){
+        stack.push(parseInt(char))
+    }else if(char === "C"){
+        stack.pop()
+    }else if(char === "D"){
+        stack.push(stack[stack.length -1]*2)
+    }else if(char === "+"){
+        stack.push(stack[stack.length -1]+ stack[stack.length -2])
+    }else{
+   return     stack
     }
-  
-    return result;
-  }
-  console.log(buildArray([1, 3], 3));
-  // Output: ['Push', 'Push', 'Pop', 'Push']
-    
+}
+return stack.reduce((sum , cur) => sum+=cur ,0)
+}
+console.log(calPoints(["5","2","C","D","+"]))
