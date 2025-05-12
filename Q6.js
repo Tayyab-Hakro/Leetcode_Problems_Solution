@@ -4,7 +4,6 @@ var findMatrix = function(nums) {
 
   for (let num of nums) {
     const count = freq.get(num) || 0;
-    console.log(count)
     if (res.length <= count) {
       res.push([]);
     }

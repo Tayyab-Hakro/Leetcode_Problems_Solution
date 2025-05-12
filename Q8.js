@@ -4,7 +4,6 @@
  */
 var maxFrequencyElements = function(nums) {
     let freq  = {};
-    let sum = 0 
     for(let char of nums){
         freq[char] = (freq[char] || 0) +1
     }
