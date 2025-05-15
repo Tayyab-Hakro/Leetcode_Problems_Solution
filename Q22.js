@@ -5,7 +5,6 @@
 var maxWidthOfVerticalArea = function(points) {
     // Step 1: Extract only x-coordinates
     let xCoords = points.map(point => point[0]);
-    console.log(xCoords)
     // Step 2: Sort the x-coordinates
     xCoords.sort((a, b) => a - b);
 
