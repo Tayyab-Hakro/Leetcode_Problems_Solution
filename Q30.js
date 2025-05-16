@@ -1,11 +1,14 @@
-class Num {
-    constructor(){
-        this.value =[]
-    }
-    valueOf(){
-    return this.value.reduce((sum , acc) => sum+=acc)
-    }
-}
-const test = new Num()
-test.push(5)
-console.log(test)
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+let divide = x % 10
+let check  = Math.floor(x / 10)
+    divide = divide.toString()
+    check = check.toString()
+let joined = divide +check
+joined = parseInt(joined)
+return joined.sort()
+};
+console.log(reverse(123))
