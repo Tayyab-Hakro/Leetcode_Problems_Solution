@@ -10,7 +10,8 @@ function maxSum(arr, k) {
 
   // Slide the window
   for (let i = k; i < arr.length; i++) {
-    windowSum += arr[i] - arr[i - k];
+
+      windowSum += arr[i] - arr[i - k];
     max = Math.max(max, windowSum);
   }
 
