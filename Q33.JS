@@ -1,17 +1,13 @@
-/**
- * @param {string} s
- * @return {number}
- */
-var countGoodSubstrings = function(s) {
-    let window = []
-    let count = 0
-    for(let i = 0 ; i<s.length-3  ; i++){
-        const win = s.substring(i ,i+3)
-        window.push(win)
-        if(new Set(window).size === 3){
-            count++
-        }
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i < num ; i++) {
+    if (num % i === 0 && num %  1 === 0) {
+      return true;
     }
-    return count
-};
-console.log(countGoodSubstrings( "xyzzaz"))
+  }
+  return false;
+}
+
+console.log(isPrime(7)); // Expected: true
+console.log(isPrime(10)); // Expected: true
+
