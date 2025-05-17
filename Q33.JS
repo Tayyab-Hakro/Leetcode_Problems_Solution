@@ -1,13 +1,11 @@
-function isPrime(num) {
-  if (num <= 1) return false;
-  for (let i = 2; i < num ; i++) {
-    if (num % i === 0 && num %  1 === 0) {
-      return true;
-    }
+function findMax(arr) {
+  let max = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+     if (arr[i] > max) {
+       max = arr[i];
   }
-  return false;
+  
 }
-
-console.log(isPrime(7)); // Expected: true
-console.log(isPrime(10)); // Expected: true
-
+return max;
+}
+console.log(findMax([-3, -1, -7, -2])); // Expected: -1
