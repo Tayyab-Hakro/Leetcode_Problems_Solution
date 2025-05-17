@@ -6,7 +6,6 @@ function maxSum(arr, k) {
   for (let i = 0; i < k; i++) {
     windowSum += arr[i];
   }
-
   max = windowSum;
 
   // Slide the window
